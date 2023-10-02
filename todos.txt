@@ -1,3 +1,5 @@
 prepare
 clean
 fix
+CR7
+Fix the cleaning machine
