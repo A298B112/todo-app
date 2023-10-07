@@ -2,8 +2,6 @@ import functions
 import PySimpleGUI as sg
 import time
 
-# add Kamola
-# this is to test how GitHub works.
 
 sg.theme("DarkBlue")
 
@@ -17,7 +15,7 @@ edit_button = sg.Button("Edit")
 complete_button = sg.Button("Complete")
 exit_button = sg.Button("Exit")
 
-window = sg.Window("My to-do app",
+window = sg.Window("To-Dos",
                    layout=[[clock],
                            [label],
                            [input_box, add_button],
