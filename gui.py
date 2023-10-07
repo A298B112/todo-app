@@ -2,6 +2,9 @@ import functions
 import PySimpleGUI as sg
 import time
 
+# add Kamola
+# this is to test how GitHub works.
+
 sg.theme("DarkBlue")
 
 clock = sg.Text("", key="clock")
