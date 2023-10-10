@@ -4,9 +4,9 @@ import functions
 todos = functions.get_todos()
 
 
-def add_todo():
-    todo = st.session_state["new_todo"] + "\n"
-    todos.append(todo)
+def add_todo(task):
+    task = task + "\n"
+    todos.append(task)
     functions.write_todos(todos)
 
 
@@ -21,7 +21,11 @@ for i, t in enumerate(todos):
         todos.pop(i)
         functions.write_todos(todos)
         del st.session_state[t]
-        st.experimental_rerun()
+        st.rerun()
 
-st.text_input("Enter a new todo:", placeholder="Write the new todo here",
-              on_change=add_todo, key="new_todo")
+with st.form("New task", clear_on_submit=True):
+    new_task = st.text_input("Enter a new todo:", placeholder="Write the new todo here")
+    submitted = st.form_submit_button("Submit")
+    if submitted:
+        add_todo(new_task)
+        st.rerun()
