@@ -13,6 +13,7 @@ def add_todo():
 st.title("To-Do app")
 st.subheader("This is a todo app.")
 st.write("This app is to increase your productivity.")
+st.write("Today you have ", len(todos),  "to complete.")
 
 for i, t in enumerate(todos):
     checkbox = st.checkbox(t, key=t)
@@ -24,5 +25,3 @@ for i, t in enumerate(todos):
 
 st.text_input("Enter a new todo:", placeholder="Write the new todo here",
               on_change=add_todo, key="new_todo")
-
-st.session_state
