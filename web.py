@@ -16,7 +16,7 @@ st.write("This app is to increase your productivity.")
 st.write("Today you have ", len(todos),  "to complete.")
 
 for i, t in enumerate(todos):
-    checkbox = st.checkbox(t, key=t)
+    checkbox = st.checkbox(t, key=f"checkbox_{i}")
     if checkbox:
         todos.pop(i)
         functions.write_todos(todos)
